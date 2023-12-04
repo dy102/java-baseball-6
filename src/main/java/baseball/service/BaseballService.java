@@ -5,7 +5,8 @@ import baseball.domain.Computer;
 import baseball.domain.dto.BaseballResult;
 import baseball.option.GameStatus;
 import baseball.util.GameManager;
-import baseball.view.Input;
+
+import java.util.List;
 
 public class BaseballService {
     private Computer computer;
@@ -14,8 +15,8 @@ public class BaseballService {
         this.computer = computer;
     }
 
-    public BaseballResult compareNumbers() {
-        Baseballs baseballs = new Baseballs(Input.number());
+    public BaseballResult compareNumbers(List<Integer> numbers) {
+        Baseballs baseballs = new Baseballs(numbers);
         return computer.compareNumbers(baseballs.numbers());
     }
 

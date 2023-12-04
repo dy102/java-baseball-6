@@ -29,7 +29,7 @@ public class BaseballController {
 
     private GameStatus compareNumbers() {
         GameStatus gameStatus;
-        BaseballResult baseballResult = baseballService.compareNumbers();
+        BaseballResult baseballResult = baseballService.compareNumbers(Input.number());
         Output.result(baseballResult);
 
         gameStatus = baseballService.isContinue(baseballResult);
