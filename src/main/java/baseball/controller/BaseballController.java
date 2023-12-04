@@ -15,7 +15,7 @@ public class BaseballController {
         start();
         GameStatus gameStatus = GameStatus.RUN;
         while (gameStatus == GameStatus.RUN) {
-            gameStatus = compareNumbers(baseballService);
+            gameStatus = compareNumbers();
             if (gameStatus == GameStatus.RESTART) {
                 gameStatus = restart();
             }
@@ -27,7 +27,7 @@ public class BaseballController {
         Output.start();
     }
 
-    private static GameStatus compareNumbers(BaseballService baseballService) {
+    private GameStatus compareNumbers() {
         GameStatus gameStatus;
         BaseballResult baseballResult = baseballService.compareNumbers();
         Output.result(baseballResult);
