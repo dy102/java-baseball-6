@@ -9,7 +9,7 @@ import baseball.util.GameManager;
 import java.util.List;
 
 public class BaseballService {
-    private Computer computer;
+    private final Computer computer;
 
     public BaseballService(Computer computer) {
         this.computer = computer;
@@ -22,5 +22,9 @@ public class BaseballService {
 
     public GameStatus isContinue(BaseballResult baseballResult) {
         return GameManager.isContinue(baseballResult);
+    }
+
+    public GameStatus isRestart(int number) {
+        return GameManager.isRestart(number);
     }
 }

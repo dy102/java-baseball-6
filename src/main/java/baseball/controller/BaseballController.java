@@ -4,7 +4,6 @@ import baseball.domain.Computer;
 import baseball.domain.dto.BaseballResult;
 import baseball.option.GameStatus;
 import baseball.service.BaseballService;
-import baseball.util.GameManager;
 import baseball.view.Input;
 import baseball.view.Output;
 
@@ -39,7 +38,7 @@ public class BaseballController {
     private GameStatus restart() {
         GameStatus gameStatus;
         Output.end();
-        gameStatus = GameManager.isRestart(Input.restart());
+        gameStatus = baseballService.isRestart(Input.restart());
         if (gameStatus == GameStatus.RUN) {
             baseballService = new BaseballService(Computer.makeRandomNumbers());
         }
