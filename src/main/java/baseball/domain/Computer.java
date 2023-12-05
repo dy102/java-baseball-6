@@ -28,15 +28,15 @@ public class Computer {
         return new Computer(computer);
     }
 
-    public BaseballResult compareNumbers(List<Integer> userNumbers) {
+    public BaseballResult compareNumbers(Baseballs baseballs) {
         int strikeCount = 0;
         int ballCount = 0;
         for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i).equals(userNumbers.get(i))) {
+            if (numbers.get(i).equals(baseballs.numbers().get(i))) {
                 strikeCount++;
                 continue;
             }
-            if (numbers.contains(userNumbers.get(i))) {
+            if (numbers.contains(baseballs.numbers().get(i))) {
                 ballCount++;
             }
         }

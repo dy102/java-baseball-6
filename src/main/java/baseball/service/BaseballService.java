@@ -16,8 +16,7 @@ public class BaseballService {
     }
 
     public BaseballResult compareNumbers(List<Integer> numbers) {
-        Baseballs baseballs = new Baseballs(numbers);
-        return computer.compareNumbers(baseballs.numbers());
+        return computer.compareNumbers(new Baseballs(numbers));
     }
 
     public GameStatus isContinue(BaseballResult baseballResult) {
